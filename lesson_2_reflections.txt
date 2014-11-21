@@ -1,0 +1,27 @@
+What happens when you initialize a respository? Why do you need to do it ?
+
+Initializing a respository creates a hidden .git folder where all your commits will be stored. It starts out empty. You need to do it to be able to use verion-control in your repository and create commits with descriptions.
+
+How is the staging area different from the working directory and the repository? What value do you think it offers?
+
+The staging area is different from the working directory and repository in that it holds files with changes to be committed. Where as the working directory holds files that are not committed and the repository only holds commits. 		
+
+How can you use the staging area to make sure you have one commit per logical change?
+
+You can use the staging area to make sure you have one commit per logical change by using git diff --staging to compare files in the staging area to your current version and make sure there's only one logical change.
+
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+ Some Situations when branches would be helpful in keeping your history organized would be if your adding new language or experimental features. You may not want changes you commit in experimental versions to effect your master branch.
+
+How do the diagrams help you visualize the branch structure?
+
+The diagrams help me visualize the branch structure by showing at what point each branch was made and showing the parent of each commit. The diagram also helped me to understand when a commit is made outside of the branch structure it is lost. This happens when you checkout an earlier commit, make changes, and then save without creating a new  branch. Using git checkout -b "new branch name" , you can create a new branch and save your work from that point. Using git checkout -b is the equivelant of running git branch "new branch" and git checkout "new branch".
+
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+
+The result of merging two branches together is that  you end up with a new commit consisting of changes made from each parent commit. A merged commit will have information about both it's parents. A merged commit will also have a merge message to signify the merge. The merge is represented in the diagram in a tree structure so you can easily see the parent of each commit and trace each branch back to the initial commit. 
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+
+The pros of mergin automatically are that you don't have to compare each commit from each branch to see what changes you would like to keep. It saves an enormous amount of time and if there is a a change in the same area of both files in each branch there will be a conflict. The conflict can be resolved by checking the file in your editor for >>>.  The cons are it might ommit or add lines that you don't want and you may run into conflicts. Merging manually on large projects would be a huge undertaking compared to using a merge. Manually merging would be good if you need to be very meticulous for whatever reason or if the files are small. You can manually merge the first commit of each branch but this is not the same as using Git's automatic merge which merge's all commits in each branch.		  		
